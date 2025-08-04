@@ -1,0 +1,9 @@
+1. Need to ensure applyControl() method in transforms.py works correctly and debug if needed
+
+2. Need to implement data preprocessing methods for working with the imported data_sets directory
+
+3. Implement accumulated normalizer methods for GNN training
+
+4. Once data can be pre-processed into robot states and trajectories -> write a quick training loop
+
+5. Maybe implement state history being fed to GNN instead of just 1 state converted to a graph

@@ -1,0 +1,19 @@
+Current Pipeline:
+1. Starting from config file -> generate Nelson's TensegrityRobotGNN object -> use this to initialize my Robot
+
+2. Given an input control call applyControl() to get new rest lens and motor speeds
+
+3. From my robot class call transforms.py's build_graph() w/ my current robot object to create feature graph we
+input to the GNN
+
+4. Use accumulated normalizer to normalize the input graph -> then feed into GNN and unnormalize to get node_dvs
+
+5. Integrate the current state forward based on previous rod lin and ang velocity, use node_dvs to update rod lin
+and ang velocity for the current state
+
+6. Feed in new rod position, orientation, lin and ang velocity, as well as the new rest lens and motor speeds to 
+update the Robot instance. Then repeat from step 2
+
+
+Things to try:
+This paper says that you should use GraphNorm instead of layer norm: https://arxiv.org/pdf/2009.03294
